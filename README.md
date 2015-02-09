@@ -2,7 +2,7 @@
 
 三軸加速度感測器的可以在預先不知道物體運動方向的情況下，應用各個維度的加速度感測器來檢測加速度資訊。三維加速度感測器具有體積小和輕量的特點，可以測量空間加速度，並且能夠全面準確反映物體的運動情形。本文使用的[三軸加速感測器為此](http://www.seeedstudio.com/depot/Grove-3Axis-Digital-Accelerometer15g-p-765.html)。
 
-![圖1 三軸方向示意圖](direction.png)
+![圖1 三軸方向示意圖](images/direction.png)
 
 圖1 三軸方向示意圖
 
@@ -18,7 +18,7 @@
 | 3 - Vcc  | Vout - 3.3V|
 | 4 - GND  | GND        |
 
-![圖2 腳位接法範例圖](pin.png)
+![圖2 腳位接法範例圖](images/pin.png)
 
 圖2 腳位接法範例圖
 
@@ -31,7 +31,7 @@
 
 感測器本身會會回傳 0~63的結果，我們可以透過此結果依表轉換成 G值(1g=m/s^2)或者角度(不建議使用)，詳細對照表可參照[此文件](http://www.freescale.com.cn/files/sensors/doc/data_sheet/MMA7660FC.pdf?fpsp=1) P.26~P.27。
 
-![圖3 數據解析對照表](table.png)
+![圖3 數據解析對照表](images/table.png)
 
 圖3 數據解析對照表
 
