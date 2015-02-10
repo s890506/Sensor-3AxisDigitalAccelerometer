@@ -1,4 +1,4 @@
-# Grove - 3Axis Digital Accelerometer
+# Grove - 3-Axis Digital Accelerometer
 
 三軸加速度感測器的可以在預先不知道物體運動方向的情況下，應用各個維度的加速度感測器來檢測加速度資訊。三維加速度感測器具有體積小和輕量的特點，可以測量空間加速度，並且能夠全面準確反映物體的運動情形。本文使用的[三軸加速感測器為此](http://www.seeedstudio.com/depot/Grove-3Axis-Digital-Accelerometer15g-p-765.html)。
 
@@ -22,14 +22,14 @@
 
 圖2 腳位接法範例圖
 
-備註：Mbed腳位只要是 SCL及 SDA即可，以 LPC1768為例：P9、P10也可使用。	
+備註：ARM Mbed 腳位只要是 SCL 及 SDA 即可，以 LPC1768 為例：P9、P10 也可使用。	
 
 
 
 
 ## 數據解析
 
-感測器本身會會回傳 0~63的結果，我們可以透過此結果依表轉換成 G值(1g=m/s^2)或者角度(不建議使用)，詳細對照表可參照[此文件](http://www.freescale.com.cn/files/sensors/doc/data_sheet/MMA7660FC.pdf?fpsp=1) P.26~P.27。
+感測器本身會會回傳 0~63 的結果，我們可以透過此結果依表轉換成 G 值(1g=m/s^2)或者角度(不建議使用)，詳細對照表可參照[此文件](http://www.freescale.com.cn/files/sensors/doc/data_sheet/MMA7660FC.pdf?fpsp=1) P.26~P.27。
 
 ![圖3 數據解析對照表](images/table.png)
 
@@ -40,7 +40,7 @@
 
 ## 程式碼
 
-開始撰寫 ARM mbed 程式碼。首先，必須引入 mbed.h及 MMA7660FC.h標頭檔，接著將連接腳位。並且我們利用 LED燈來顯示感測器的變化。
+開始撰寫 ARM mbed 程式碼。首先，必須引入 mbed.h 及 MMA7660FC.h 標頭檔，接著將連接腳位。並且我們利用 LED 燈來顯示感測器的變化。
 
 程式碼如下：
 
@@ -88,12 +88,12 @@ int main()
         pc.printf("z: %1.3f g \n", G_VALUE[Acc.read_z()]);          // Print the Z axis acceleration
         pc.printf("\n");
         
-        //換算成 G值
+        //換算成 G 值
         ax = G_VALUE[Acc.read_x()];
         ay = G_VALUE[Acc.read_y()];
         az = G_VALUE[Acc.read_z()];
         
-        //用 LED簡單展示數值變化
+        //用 LED 簡單展示數值變化
         if(ax<0){
             myled1=1;
         }else{
